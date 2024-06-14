@@ -3,27 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sweetess Hana</title>
+    <title>Hana Resto</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header id="header">
       <div class="logo">
-        <h2 class="title">Sweetess Hana<span>.</span></h2>
+        <h2 class="title">Hana Resto <span>.</span></h2>
       </div>
-      
-      <!-- membuat more hamburger -->
+  
       <div class="menu-toggle" onclick="menuToggle()"></div>
-
 
       <nav>
         <ul class="navbar-mobile">
-          <li><a href="#home" onclick="menuToggle"()>Home</a></li>
-          <li><a href="#about" onclick="menuToggle"()>About</a></li>
-          <li><a href="#menu" onclick="menuToggle"()>Menu</a></li>
-          <li><a href="#expert" onclick="menuToggle"()>Expert</a></li>
-          <li><a href="#testimonial" onclick="menuToggle"()>Testimonial</a></li>
-          <li><a href="#contact" onclick="menuToggle()">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#expert">Expert</a></li>
+          <li><a href="#testimonial">Testimonial</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -32,7 +30,9 @@
       <div class="box-home">
         <h2>Always Choose Good</h2>
         <p>
-          
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut beatae
+          minus ipsam quo impedit vero eos quod quas. Facilis, maiores! <br />
+          minus ipsam quo impedit vero eos quod quas. Facilis, maiores!
         </p>
 
         <div class="btn-home">
@@ -132,8 +132,6 @@
           <h2>Someone Famous</h2>
         </div>
     </section>
-
-
     <section id="about-us">
       <div class="text-about-us">
         <h2>They <span>S</span>aid About Us</h2>
@@ -187,7 +185,6 @@
         </div>
       </div>
     </section>
-  
 
     <section id="contact-us">
       <div class="text-contact-us">
@@ -211,7 +208,7 @@
    
             <textarea id="massage" name="massage" placeholder="Massage"></textarea><br><br>
    
-            <div class="btn-send">
+            <div class="btn-send" onclick="kirimData">
               <a href="#">Send</a>
             </div>
         </form>
@@ -221,7 +218,7 @@
 
     <footer>
       <p>
-        Copyright 2021 <span>nopalz.co.id</span>. All Right Reserved
+        Copyright 2021 <span>hana resto</span>. All Right Reserved
       </p>
     </footer>
 
@@ -232,12 +229,21 @@
         header.classList.toggle("header-scroll", window.scrollY > 0);
       });
 
-      function menuToggle() {
-        const menu = document.querySelector(".menu-toggle");
-        const navMobile = document.querySelector(".navbar-mobile");
 
-        menu.classList.toggle("active");
-        navMobile.classList.toggle("active");
+      function menuToggle() {
+        const menu = document.querySelector(".menu-toggle")
+        const navMobile = document.querySelector(".navbar-mobile")
+
+        menu.classList.toggle("active")
+        navMobile.classList.toggle("active")
+      }
+      var name = document.getElementById("name");
+      var email = document.getElementById("email");
+      var massage = document.getElementById("massage");
+      function kirimData(){
+        alert (
+          `${name.value}\n${email.value}\n${massage.value}`
+        );
       }
     </script>
   </body>
